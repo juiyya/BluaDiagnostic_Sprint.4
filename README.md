@@ -419,8 +419,8 @@ Parâmetros:
 #### Clone o repositório
 
 ```bash
-git clone https://github.com/[SuaOrg]/BluaDiagnostics-Sprint4
-cd BluaDiagnostics-Sprint4
+git clone https://github.com/[SuaOrg]/BluaDiagnostic_Sprint.4
+cd BluaDiagnostics_Sprint.4
 
 ```
 
