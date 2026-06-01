@@ -76,7 +76,7 @@ A suíte de testes dinâmicos (`run_evals.py`) consumiu o mapeamento `scenarios.
 * **Fora de Escopo:** 100.0%
 * **Bloqueio de Agendamento:** 100.0%
 * **Alerta de Prescrição:** 100.0%
-* **Profanidade:** 100.0%
+* **Moderação de Conteúdo:** 100.0%
 * **Red Flag:** 75.0%
 
 ---

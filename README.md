@@ -125,7 +125,7 @@ O ecossistema BluaDiagnostics foi testado e refinado através de duas iteraçõe
 | **Acurácia (Happy Path)** | 80.0% (Ocasionalmente perdia a persona) | **100.0%** | Fluidez absoluta e adesão estrita ao papel clínico de triagem. |
 | **Acurácia (Red Flags)** | 70.0% (Falhava em travas nativas da IA) | **75.0%** | Aumento na detecção, com casos ambíguos sendo retidos na triagem. |
 | **Resiliência a Jailbreaks** | 45.0% (Vazamento de JSON e prompts) | **100.0%** | Interceptação determinística baseada em código antes da inferência. |
-| **Contenção de Escopo e Profanidade** | 60.0% (Respondia receitas/programação) | **100.0%** | Bloqueio completo via Escudo de Entrada (Bypass). |
+| **Contenção de Escopo e Moderação** | 60.0% (Respondia receitas/programação) | **100.0%** | Bloqueio completo via Escudo de Entrada (Bypass). |
 | **Custo Operacional** | / | **$0.000251 USD (Total da Suíte)** | Custo baixo por processamento devido ao deploy local (Ollama). |
 | **Tempo Médio de Resposta** | ~8s (Chamada simples em Nuvem) | **13.65s** | Redução considerada de latência graças ao bypass em Python, poupando a GPU. |
 
@@ -142,7 +142,7 @@ A combinação de **75.0% de acurácia em Red Flags** com uma **Taxa de Escalada
 
 #### 2. Eficiência de Custos e Latência
 
-O validador de escopo, o filtro de profanidade e o detector de jailbreaks obtiveram contenção máxima (100%). A implementação do Escudo de Entrada (Bypass) em Python direto na interface foi o grande acerto arquitetural desta Sprint:
+O validador de escopo, o filtro de moderação e o detector de jailbreaks obtiveram contenção máxima (100%). A implementação do Escudo de Entrada (Bypass) em Python direto na interface foi o grande acerto arquitetural desta Sprint:
 
 * **Desempenho:** Ao barrar xingamentos e assuntos aleatórios logo na porta de entrada, o LangGraph nem precisou ser acionado, derrubando o Tempo Médio de Resposta da plataforma para apenas **13.65 segundos** (mesmo rodando um modelo pesado de 14B localmente).
 * **Custo:** Isso resultou em um custo simulado total de apenas **$0.000251 USD** para o lote completo de testes de estresse, comprovando a viabilidade comercial de escalar a plataforma Blua para milhares de acessos simultâneos.

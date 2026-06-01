@@ -14,10 +14,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # VARIÁVEL DE REDE: Aponta para o Ollama na máquina hospedeira. 
-# NOTA: Isso não é uma API Key, é apenas uma rota local segura.
+# isso não é uma API Key, é apenas uma rota local segura.
 ENV OLLAMA_BASE_URL="http://host.docker.internal:11434"
 
-# Expõe a porta padrão do Streamlit
+# porta padrão do Streamlit
 EXPOSE 8501
 
 # Verifica se a interface subiu corretamente
