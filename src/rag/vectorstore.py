@@ -1,6 +1,6 @@
 import os
 from langchain_chroma import Chroma
-from langchain_community.embeddings import OllamaEmbeddings
+from langchain_ollama import OllamaEmbeddings
 
 def obter_embeddings():
     return OllamaEmbeddings(model="nomic-embed-text")

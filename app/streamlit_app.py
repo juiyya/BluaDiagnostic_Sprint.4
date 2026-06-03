@@ -1,6 +1,11 @@
 import os
 import sys
+import uuid 
 import streamlit as st
+
+from dotenv import load_dotenv
+
+load_dotenv() 
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
 
@@ -12,6 +17,9 @@ from safety.out_scope import validar_escopo_medico
 
 st.set_page_config(page_title="Blua - Care Plus", layout="centered")
 st.title("Blua — Assistente Virtual")
+
+if "thread_id" not in st.session_state:
+    st.session_state.thread_id = str(uuid.uuid4())
 
 if "graph" not in st.session_state:
     st.session_state.graph = build_graph()
@@ -33,17 +41,14 @@ if prompt := st.chat_input("Como você está se sentindo hoje?"):
     
     st.session_state.chat_messages.append(HumanMessage(content=prompt))
 
-    #  BYPASS
+    # BYPASS
     if verificar_toxidade(prompt):
         resposta_final = "Violação de segurança: Linguagem inapropriada detectada. Por favor, mantenha o respeito."
-    
     elif validar_escopo_medico(prompt):
         resposta_final = "Desculpe, sou um assistente de saúde da Care Plus e só posso ajudar com assuntos médicos, de agendamento e informações do seu plano."
-    
     else:
-        config = {"configurable": {"thread_id": "paciente_session"}}
-        estado_inicial = {"messages": st.session_state.chat_messages}
-        
+        config = {"configurable": {"thread_id": st.session_state.thread_id}}
+        estado_inicial = {"messages": [HumanMessage(content=prompt)]}
         with st.spinner("Analisando..."):
             try:
                 estado_saida = st.session_state.graph.invoke(estado_inicial, config)

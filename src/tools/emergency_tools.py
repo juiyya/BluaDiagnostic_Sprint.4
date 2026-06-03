@@ -10,5 +10,5 @@ def notificar_equipe_medica(patient_id: str, motivo: str) -> str:
         patient_id: O ID do paciente. Use exatamente a string "NAO_IDENTIFICADO" se não souber.
         motivo: Descrição curta e clara da emergência ou sintoma grave relatado pelo usuário.
     """
-    logger.warning(f"[Tool] Paciente {patient_id} | Motivo: {motivo}")
+    logger.warning(f"[Tool] notificar_equipe_medica acionada. Paciente {patient_id} | Motivo: {motivo}")
     return "Equipe médica de plantão foi notificada pelo canal prioritário."

@@ -13,7 +13,7 @@ class RoteamentoSupervisor(BaseModel):
     )
 
 def supervisor_node(state):
-    logger.info("Supervisor acionado (Modo Estruturado).")
+    logger.info("Supervisor acionado.")
     prompt_text = carregar_prompt("supervisor_prompt.md")
     
     llm = ChatOllama(model="qwen2.5:14b", temperature=0)

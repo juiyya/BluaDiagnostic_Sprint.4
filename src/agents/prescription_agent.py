@@ -18,10 +18,9 @@ def prescription_node(state):
     ]
     
     if len(msgs_validas) <= 2:
-        logger.info("Início de fluxo: Ferramentas de prescrição bloqueadas.")
         prompt_text += "\n\n[SISTEMA: ESTA É A SUA PRIMEIRA INTERAÇÃO. ENTENDA A DÚVIDA DO PACIENTE SOBRE MEDICAMENTOS ANTES DE BUSCAR DIRETRIZES OU INTERAÇÕES. NÃO INVENTE DADOS.]"
     else:
-        logger.info("Fluxo em andamento: Ferramentas liberadas.")
+        logger.info("Fluxo em andamento.")
         llm = llm.bind_tools(prescription_tools)
     
     mensagens = [SystemMessage(content=prompt_text)] + msgs_validas

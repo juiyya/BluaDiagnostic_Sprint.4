@@ -21,7 +21,7 @@ def schedule_node(state):
         logger.info("Início de fluxo: Ferramentas de agendamento bloqueadas para coleta de ID.")
         prompt_text += "\n\n[SISTEMA: ESTA É A SUA PRIMEIRA INTERAÇÃO. SOLICITE O ID DO PACIENTE. NÃO INVENTE DADOS.]"
     else:
-        logger.info("Fluxo em andamento: Ferramentas liberadas.")
+        logger.info("Fluxo em andamento.")
         llm = llm.bind_tools(scheduling_tools)
     
     mensagens = [SystemMessage(content=prompt_text)] + msgs_validas

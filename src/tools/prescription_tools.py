@@ -11,7 +11,7 @@ def buscar_diretrizes_careplus(query: str) -> str:
     REGRAS:
     O parâmetro 'query' deve ser direto, contendo os sintomas ou nomes dos medicamentos sobre os quais você precisa de informações.
     """
-    logger.info(f"[Tool] buscar_diretrizes_careplus disparando busca vetorial por: '{query}'")
+    logger.info(f"[Tool] buscar_diretrizes_careplus busca RAG por: '{query}'")
     try:
         retriever = obter_retriever()
         resultados = retriever.invoke(query)

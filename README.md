@@ -544,9 +544,9 @@ Para garantir a conformidade com a LGPD e evitar responsabilidades de uso indevi
 
 ### Integrantes
 
-- RM568438 Julia
-- RM568081 Bryan
-- RM566746 Guilherme
-- RM567348 Roberto
-- RM567894 Daniel
-- RM568024 Jessica
+- Julia Yamazaki — RM: 568438
+- Roberto Flaquer — RM: 567348
+- Bryan de Almeida — RM: 568081
+- Daniel Silva — RM: 567894
+- Guilherme Blanco — RM: 566746
+- Jessica Guiot — RM: 568024 

@@ -1,6 +1,7 @@
 from langgraph import graph
 from langgraph.graph import StateGraph, START, END
 from langgraph.prebuilt import ToolNode, tools_condition
+from langgraph.checkpoint.memory import MemorySaver
 from graph.state import State
 from graph.routing import roteamento_supervisor
 from agents.supervisor_agent import supervisor_node
@@ -45,4 +46,5 @@ def build_graph():
     graph_builder.add_conditional_edges("schedule_agent", tools_condition, {"tools": "scheduling_tools", END: END})
     graph_builder.add_edge("scheduling_tools", "schedule_agent")
 
-    return graph_builder.compile()
+    memoria = MemorySaver()
+    return graph_builder.compile(checkpointer=memoria)

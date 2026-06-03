@@ -101,3 +101,14 @@ Refatoração de pastas (agentes, graph, safety, prompts), centralização de co
 * **Fase 6 — Observabilidade:** Integração com LangSmith, logs estruturados e registro das trajetórias de ferramentas e documentos.
 
 * **Fase 7 — Interface e Entrega:** Finalização do frontend Streamlit, documentação e gravação de vídeo demonstrativo.
+
+---
+
+### Integrantes
+
+- Julia Yamazaki — RM: 568438
+- Roberto Flaquer — RM: 567348
+- Bryan de Almeida — RM: 568081
+- Daniel Silva — RM: 567894
+- Guilherme Blanco — RM: 566746
+- Jessica Guiot — RM: 568024 

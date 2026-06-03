@@ -18,7 +18,7 @@ def escalation_node(state):
         if getattr(msg, 'name', '') != "supervisor"
     ]
     
-    logger.info("Ferramentas de emergência liberadas e prontas para uso.")
+    logger.info("Ferramentas de emergência liberadas.")
     
     mensagens = [SystemMessage(content=prompt_text)] + msgs_validas
     resposta = llm.invoke(mensagens)
