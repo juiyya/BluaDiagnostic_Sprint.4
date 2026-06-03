@@ -525,6 +525,10 @@ A aplicação permite demonstrar:
 
 ---
 
+## Vídeo de demonstração:
+
+https://www.youtube.com/watch?v=fSAKRy0DaWs
+
 ## Segurança, Privacidade e Conformidade (LGPD)
 
 O BluaDiagnostics foi projetado com uma arquitetura *Offline-First* e opera em um ambiente 100% simulado (Sandbox), garantindo segurança total da rede e mitigação de riscos clínicos e de vazamento de dados.
